@@ -3,7 +3,7 @@ from cms.plugin_pool import plugin_pool
 from django.utils.translation import gettext_lazy as _
 
 from .models import AgendaPluginModel
-from ..event.models import Event
+from apps.agenda.event.models import Event
 
 
 class AgendaPluginPublisher(CMSPluginBase):
