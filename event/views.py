@@ -3,8 +3,8 @@ from .models import Event
 from django.views import generic
 
 
-class IndexView(generic.ListView):
-    template_name = 'index.html'
+class ListView(generic.ListView):
+    template_name = 'list.html'
     context_object_name = 'events_list'
 
     def get_queryset(self):
