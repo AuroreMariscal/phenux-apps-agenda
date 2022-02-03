@@ -2,9 +2,9 @@
 
 {% block content %}
 <h1>Events</h1>
-{% if events_list %}
+{% if list %}
 <ul>
-  {% for event in events_list %}
+  {% for event in list %}
   <li><a href="{% url 'events:detail' event.id %}">{{ event.title }}</a></li>
   {% endfor %}
 </ul>

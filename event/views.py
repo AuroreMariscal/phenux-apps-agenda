@@ -5,7 +5,7 @@ from django.views import generic
 
 class ListView(generic.ListView):
     template_name = 'list.html'
-    context_object_name = 'events_list'
+    context_object_name = 'list'
 
     def get_queryset(self):
         return Event.objects.all()

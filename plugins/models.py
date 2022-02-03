@@ -4,5 +4,5 @@ from django.utils.timezone import now
 from django.db import models
 
 
-class AgendaPlugin(CMSPlugin):
+class AgendaPluginModel(CMSPlugin):
     title = models.CharField(max_length=50, default='Title')

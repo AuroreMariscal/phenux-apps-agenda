@@ -2,17 +2,23 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from django.utils.translation import gettext_lazy as _
 
-from .models import AgendaPlugin
+from .models import AgendaPluginModel
+from ..event.models import Event
 
 
-class AgendaPlugin(CMSPluginBase):
-    model = AgendaPlugin
-    name = _("Agenda Plugin")
+class AgendaPluginPublisher(CMSPluginBase):
+    model = AgendaPluginModel
+    name = _("Agenda")
+    module = _("Agenda")
     render_template = "agenda.html"
     cache = False
 
     def render(self, context, instance, placeholder):
-        context = super().render(context, instance, placeholder)
+        list = Event.objects.all()
+        context.update({
+            'list': list,
+            'instance': instance,
+        })
         return context
 
-plugin_pool.register_plugin(AgendaPlugin)
+plugin_pool.register_plugin(AgendaPluginPublisher)

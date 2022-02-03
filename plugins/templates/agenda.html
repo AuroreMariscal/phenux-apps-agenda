@@ -1,3 +1,11 @@
-<h1>
-  Agenda
-</h1>
+
+<h1>Events</h1>
+{% if list %}
+<ul>
+  {% for event in list %}
+  <li><a href="{% url 'events:detail' event.id %}">{{ event.title }}</a></li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No event are available.</p>
+{% endif %}
