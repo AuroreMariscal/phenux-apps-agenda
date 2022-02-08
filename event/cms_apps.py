@@ -3,7 +3,7 @@ from cms.apphook_pool import apphook_pool
 
 
 class AgendaApphook(CMSApp):
-    app_name = "events"
+    app_name = "events" # Name used in template
     name = "Agenda Application"
 
     def get_urls(self, page=None, language=None, **kwargs):
