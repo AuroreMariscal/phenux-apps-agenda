@@ -10,7 +10,7 @@ class AgendaPluginPublisher(CMSPluginBase):
     model = AgendaPluginModel
     name = _("Agenda")
     module = _("Agenda")
-    render_template = "agenda.html"
+    render_template = "list.html"
     cache = False
 
     def render(self, context, instance, placeholder):
